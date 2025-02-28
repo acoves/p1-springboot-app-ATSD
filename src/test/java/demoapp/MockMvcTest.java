@@ -1,6 +1,7 @@
 package demoapp;
 
 
+import demoapp.service.CalculatorService;
 import demoapp.service.PalindromeService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,5 +54,19 @@ public class MockMvcTest {
                 .andExpect(status().isOk())
                 .andExpect(model().attribute("isPalindrome", true))
                 .andExpect(view().name("palindromeResult"));
+    }
+
+
+    @MockBean
+    private CalculatorService calculatorService;
+
+    @Test
+    public void testCalculate() throws Exception {
+        when(calculatorService.calculate(2, 3, "add")).thenReturn(5.0);
+
+        mockMvc.perform(post("/calculator").param("number1", "2").param("number2", "3").param("operation", "add"))
+                .andExpect(status().isOk())
+                .andExpect(model().attribute("result", 5.0))
+                .andExpect(view().name("calculatorResult"));
     }
 }
