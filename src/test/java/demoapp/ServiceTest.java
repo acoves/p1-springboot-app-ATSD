@@ -17,6 +17,8 @@ public class ServiceTest {
     SaludoService saludo;
     PalindromeService palindromeService = new PalindromeService(); // PalindromeService is a service
     CalculatorService calculatorService = new CalculatorService(); // CalculatorService is a service
+    EvenNumberService evenNumberService = new EvenNumberService(); // EvenNumberService is a service
+
 
 
     @Test
@@ -46,5 +48,13 @@ public class ServiceTest {
         assertEquals(2, calculatorService.calculate(6, 3, "divide"));
         assertThrows(IllegalArgumentException.class, () -> calculatorService.calculate(6, 0, "divide"));
         assertThrows(IllegalArgumentException.class, () -> calculatorService.calculate(6, 3, "invalid"));
+    }
+
+    @Test //EvenNumberService is a service
+    public void testIsEven() {
+        assertTrue(evenNumberService.isEven(2));
+        assertFalse(evenNumberService.isEven(3));
+        assertTrue(evenNumberService.isEven(0));
+        assertFalse(evenNumberService.isEven(-1));
     }
 }
