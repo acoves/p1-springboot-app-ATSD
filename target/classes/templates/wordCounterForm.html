@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Word Counter</title>
+</head>
+<body>
+<form action="/wordCounter" method="post">
+    <label for="sentence">Enter a sentence:</label>
+    <input type="text" id="sentence" name="sentence" required>
+    <button type="submit">Count Words</button>
+</form>
+</body>
+</html>

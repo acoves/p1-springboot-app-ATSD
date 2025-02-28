@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: demoapp.MockMvcTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.451 s - in demoapp.MockMvcTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.716 s - in demoapp.MockMvcTest

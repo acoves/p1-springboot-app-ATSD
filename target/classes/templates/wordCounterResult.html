@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Word Counter Result</title>
+</head>
+<body>
+<h1>Word Count Result</h1>
+<p>Sentence: <span th:text="${sentence}"></span></p>
+<p>Word Count: <span th:text="${wordCount}"></span></p>
+<a href="/wordCounter">Count another sentence</a>
+</body>
+</html>
